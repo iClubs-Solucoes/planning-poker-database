@@ -1,0 +1,22 @@
+{
+  "name": "planning-poker-database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/planning-poker-database",
+  "author": "Fulvio Coelho <coelho.fulvio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4"
+  },
+  "scripts": {
+    "deploy-dev": "sam deploy -t template.yml --stack-name Dev-IC-Planning-Poker-Database-Deploy --region us-east-2 --parameter-overrides Stage=dev Tenant=ic",
+    "deploy-prod": "sam deploy -t template.yml --stack-name Prod-IC-Planning-Poker-Database-Deploy --region us-east-2 --parameter-overrides Stage=prod Tenant=ic"
+  },
+  "config": {
+     "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+     }
+  }
+}
